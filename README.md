@@ -14,4 +14,5 @@ This book is not suitable for beginner-level Python learners. It assumes existin
 ## Table of Contents
 
 * [Chapter 01. The Python Data Model](./Chapter%2001.%20The%20Python%20Data%20Model/README.md)
+* [Chapter 02. An Array of Sequences](./Chapter%2002.An%20Array%20of%20Sequences/README.md)
 
