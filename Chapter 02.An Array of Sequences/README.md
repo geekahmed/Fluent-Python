@@ -25,6 +25,7 @@
 ## Table of Contents
 * [Overview of Built-In Sequences](#overview-of-built-in-sequences)
 * [List Comprehensions and Generator Expressions](#list-comprehensions-and-generator-expressions)
+* [Tuples Are Not Just Immutable Lists](#tuples-are-not-just-immutable-lists)
 ### Overview of Built-In Sequences
 <p align="center">
   <img src="./resources/images/Simplified memory diagrams for a tuple and an array.png" alt="Simplified memory diagrams for a tuple and an array"/>
@@ -73,3 +74,34 @@
 * **Cartesian Products:** Both listcomps and genexps can create Cartesian products (combinations of items from multiple iterables).
     * **Listcomps:** Create a list of all combinations, potentially memory-intensive.
     * **Genexps:** Generate combinations one at a time, saving memory.
+
+### Tuples Are Not Just Immutable Lists
+**Tuples: More Than Immutable Lists**
+
+* **Dual Roles:**
+    * **Records:**  Store related data elements with meaning derived from their position (e.g., coordinates, city data).
+    * **Immutable Lists:**  Similar to lists, but cannot be changed once created.
+
+**Tuples as Records**
+
+* **Meaning in Position:**  The order of items in a tuple matters when it represents a record.
+* **Benefits:** 
+    * **Clarity:**  Easy to understand the structure and meaning of data.
+    * **Unpacking:**  Easily assign tuple elements to separate variables (e.g., `city, year, pop = ('Tokyo', 2003, 32450)`).
+    * **No Need for Named Fields:** Often, tuples are simpler than custom classes for representing records.
+
+**Tuples as Immutable Lists**
+
+* **Advantages:**
+    * **Clarity:**  Length is guaranteed to be fixed.
+    * **Performance:** Typically more memory-efficient and faster than lists.
+* **Caveat:** Immutability only applies to the references themselves. If a tuple holds references to mutable objects (like lists), those objects can be modified.
+* **Hashing:** Mutable tuples cannot be used as dictionary keys or set elements because they are not hashable.
+<p align="center">
+  <img src="./resources/images/The content of the tuple itself is immutable.png" alt="The content of the tuple itself is immutable"/>
+</p>
+
+**Comparing Tuples and Lists**
+
+* **Methods:**  Tuples support most of the same methods as lists, except those that modify the sequence (e.g., `append`, `insert`).
+* **Suitability:** Use tuples for fixed collections and records; use lists for dynamic collections.
