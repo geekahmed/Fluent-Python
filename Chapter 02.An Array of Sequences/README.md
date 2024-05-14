@@ -26,6 +26,9 @@
 * [Overview of Built-In Sequences](#overview-of-built-in-sequences)
 * [List Comprehensions and Generator Expressions](#list-comprehensions-and-generator-expressions)
 * [Tuples Are Not Just Immutable Lists](#tuples-are-not-just-immutable-lists)
+* [Unpacking Sequences and Iterables](#unpacking-sequences-and-iterables)
+
+
 ### Overview of Built-In Sequences
 <p align="center">
   <img src="./resources/images/Simplified memory diagrams for a tuple and an array.png" alt="Simplified memory diagrams for a tuple and an array"/>
@@ -105,3 +108,32 @@
 
 * **Methods:**  Tuples support most of the same methods as lists, except those that modify the sequence (e.g., `append`, `insert`).
 * **Suitability:** Use tuples for fixed collections and records; use lists for dynamic collections.
+
+### Unpacking Sequences and Iterables
+**Unpacking Sequences and Iterables**
+
+* **What is Unpacking?**  Assigning elements from an iterable (e.g., tuple, list, iterator) to individual variables.
+* **Benefits:**
+    * Avoids using indexes to access elements.
+    * Works with any iterable, even those without index support.
+* **Parallel Assignment:**
+    * Assigns each element to a corresponding variable.
+    * Example: `latitude, longitude = (33.9425, -118.408056)`
+* **Swapping Variables:**
+    * Concise way to swap values: `b, a = a, b`
+* **Function Calls with `*`:**
+    * Unpack an iterable to provide arguments to a function.
+    * Example: `divmod(*t)`  (where `t` is a tuple)
+* **Using `*` to Grab Excess Items:**
+    * Assign remaining items to a list.
+    * Can appear in any position.
+    * Example: `a, b, *rest = range(5)` (rest will be `[2, 3, 4]`)
+* **Unpacking with `*` in Function Calls and Sequence Literals (Python 3.5+):**
+    * Use `*` multiple times in function calls and sequence literals.
+    * Example: `[*range(4), 4]` (creates a list `[0, 1, 2, 3, 4]`)
+* **Nested Unpacking:**
+    * Unpack nested structures with corresponding nested targets.
+    * Example: `for name, _, _, (lat, lon) in metro_areas:` 
+* **Unpacking with Lists:**
+    * Can be used with lists, but less common.
+    * Useful for handling single-record database query results.
